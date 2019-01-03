@@ -13,31 +13,37 @@ import javafx.stage.Stage;
 import javafx.scene.control.*;
 
 import java.util.Timer;
+import java.util.TimerTask;
 
 public class Main extends Application {
     int clicks;
     String text = "My Counter: "+ clicks;
     Label label= new Label(text);
+    boolean timer = false ;
+    public void textDone() {
+        label.setText("Done!");
+    }
+
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(final Stage primaryStage) throws Exception {
 
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("Button Game");
 
-        Button button = new Button ("My Button");
+        Button button = new Button("My Button");
         button.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 clicks++;
-                label.setText("My Counter: "+ clicks);
-                Timer timer = new Timer();
-                TimerTask time =
-                timer.schedule(textDone(),10000);
-            }
-            public void textDone(){
-                label.setText("Done!");
+                label.setText("My Counter: " + clicks);
+                if (!timer) {
+                    timer = true;
+
+                }
             }
         });
+
+
         HBox container = new HBox(button,label);
         Scene scene = new Scene(container,500,300);
 
