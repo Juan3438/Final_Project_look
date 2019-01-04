@@ -30,24 +30,42 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("Button Game");
 
-        Button button = new Button("My Button");
-        button.setOnAction(new EventHandler<ActionEvent>() {
+        Button button1 = new Button("Red");
+        button1.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                clicks++;
-                label.setText("My Counter: " + clicks);
-                if (!timer) {
-                    timer = true;
 
-                }
+            }
+        });
+        Button button2 = new Button("Blue");
+        button2.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+
+            }
+        });
+        Button button3 = new Button("Green");
+        button3.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+
+            }
+        });
+        Button button4 = new Button("Yellow");
+        button4.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+
             }
         });
 
-
-        HBox container = new HBox(button,label);
+        HBox container = new HBox(button1,button2,button3,button4,label);
         Scene scene = new Scene(container,500,300);
 
-        button.setMaxSize(100,100);
+        button1.setPrefSize(100,100);
+        button2.setPrefSize(100,100);
+        button3.setPrefSize(100,100);
+        button4.setPrefSize(100,100);
 
         primaryStage.setScene(scene);
 
