@@ -9,6 +9,8 @@ import javafx.stage.Stage;
 
 public class GameCode extends Application {
 
+
+
     @Override
     public void start(final Stage primaryStage) throws Exception  {
 
@@ -29,6 +31,13 @@ public class GameCode extends Application {
 
         primaryStage.show();
 
+        try{
+
+        }catch()(
+
+        );{
+
+        }
     }
 
 
