@@ -10,6 +10,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Circle;
 
+import java.io.IOException;
+
 public class gameControl  {
 
     private Player hero;
@@ -17,7 +19,7 @@ public class gameControl  {
 
     private window scene;
 
-    public gameControl(Player hero , Enemy villain){
+    public gameControl(Player hero , Enemy villain) throws IOException {
 
 
         this.hero = hero;

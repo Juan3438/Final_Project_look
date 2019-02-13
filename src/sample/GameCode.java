@@ -12,33 +12,25 @@ public class GameCode extends Application {
 
 
     @Override
-    public void start(final Stage primaryStage) throws Exception  {
+    public void start(final Stage primaryStage) throws Exception {
 
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("Early Game");
 
-        Player hero = new Player(10,3,2);
-        Enemy villain = new Enemy(5,2,4);
-
-        gameControl game = new gameControl(
-                hero,
-                villain
-
-        );
-
+       /* Player hero = new Player(100,100,10);
+        Enemy villain = new Enemy(100,50,20);
+        gameControl game = new gameControl(hero,villain);
         Scene menuScreen = game.getMenuScreen();
         primaryStage.setScene(menuScreen);
+*/
 
+        primaryStage.setTitle("Hello World");
+        primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
 
-        try{
-
-        }catch()(
-
-        );{
-
-        }
     }
+
+
 
 
     public static void main(String[] args) {

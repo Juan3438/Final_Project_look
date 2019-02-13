@@ -1,11 +1,16 @@
 package sample;
 
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Circle;
+
+import java.awt.event.ActionEvent;
+import java.io.IOException;
 
 public class window {
 
@@ -25,10 +30,14 @@ public class window {
     Button playGame = new Button("Play Game");
     Button editArmy = new Button("Edit Army");
 
+    Parent MenuScreen = FXMLLoader.load(getClass().getResource("Menu.fxml"));
+    Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
 
-    VBox menuPage = new VBox(logo,playGame,editArmy);
+    public void start(ActionEvent actionEvent){
+        Scene holder = new Scene(root,100,100);
+    }
 
-    public window(Player hero, Enemy villain){
+    public window(Player hero, Enemy villain) throws IOException {
 
         this.hero = hero;
         this.villain = villain;
@@ -46,13 +55,9 @@ public class window {
 
     public Scene getMenuScreen(){
 
-        Scene menuScreen = new Scene(menuPage,600,600);
+        Scene menuScreen = new Scene(MenuScreen,600,600);
         return menuScreen;
     }
 
-    public void gameLoop(){
 
-
-
-    }
 }
